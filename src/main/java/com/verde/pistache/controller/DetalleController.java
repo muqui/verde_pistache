@@ -27,6 +27,7 @@ public class DetalleController {
     String  home(ModelMap model , HttpServletRequest request){
       String id = request.getParameter("c");
         Producto p = productService.getProducto(id);
+         System.out.println("valor de p " + p);
           model.addAttribute("producto", p );
     return "detalle";
     }

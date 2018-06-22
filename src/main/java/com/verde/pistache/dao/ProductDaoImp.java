@@ -27,14 +27,18 @@ public class ProductDaoImp implements ProductDao {
     }
 
     public Producto getProducto(String codigo) {
-   
+   Producto p = null;
           Session session = this.sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Producto where codigo= :codigo ");
         query.setParameter("codigo", codigo);
         List<?> list = query.list();
-        Producto p = (Producto) list.get(0);
+       if(list.size()>0){
+              p = (Producto) list.get(0);
+       }
+       
+       
 
-        System.out.println("imagen: " + p);
+     
 
         return p;
     }

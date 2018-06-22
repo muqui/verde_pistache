@@ -10,12 +10,48 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/estilos.css" />" />
-        <script src="<c:url value="/resources/js/funciones.js" />"></script>
-        <link href="<c:url value="/resources/css/footable.core.css" />" rel="stylesheet">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+         <li><a href="#">Dama</a></li>
+          <li><a href="#">Caballeros</a></li>
+           <li><a href="#">Niños</a></li>
+       
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+           <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar">
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+      </form>
+           <li><a href="#">Usuario</a></li>
+        <li><a href="#">Carrito</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+       
         <title>Verde Pistache</title>
     </head>
     <body>
+     
 
         <div class="container">
 
@@ -67,18 +103,108 @@
                 </a>
             </div>         
         </div >
-        <%//   <a href="/"><img  src="/resources/images/logo.png" height="60px" width="160px"></a></li>%>
-        <a href="/detalle?c=10204050"><img src="/resources/images/5001.jpg" class="img-rounded float-left" width="400" height="500" alt="Cinque Terre"></a>
-           <img src="/resources/images/5002.jpg" class="img-rounded" width="400" height="500" alt="Cinque Terre">
-             <img src="/resources/images/5004.jpg" class="img-rounded"   width="400" height="500" alt="Cinque Terre">
-        
-            
-           
-               <img src="/resources/images/5005.jpg" class="img-rounded" alt="Cinque Terre">
-                <img src="/resources/images/5006.jpg" class="img-rounded" alt="Cinque Terre">
-                  <img src="/resources/images/5007.jpg" class="img-rounded" alt="Cinque Terre">
-                   <img src="/resources/images/5008.jpg" class="img-rounded" alt="Cinque Terre">
-        
+
+
+
+
+
+
+
+
+<div class="container">
+  
+  <div class="row ">
+    <div class="col-sm-6  " >
+  <img src="/resources/images/5005.jpg" class="img-rounded" width="100%" height="360" alt="Cinque Terre">
+
+     </div>   
+     
+    <div class="col-sm-3" >
+    
+               
+
+ <div class="col-sm-12" >
+    <img src="/resources/images/5007.jpg" class="img-rounded" width="100%"  height="180"alt="Cinque Terre">
+
+      
+    </div>
+
+<div class="col-sm-12" >
+     <img src="/resources/images/5006.jpg" class="img-rounded" width="100%" height="180"alt="Cinque Terre">
+
+      
+    </div>
+
+
+    </div>
+    <div class="col-sm-3" >
+      <img src="/resources/images/5008.jpg" class="img-rounded" width="100%" height="360" alt="Cinque Terre">
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container">
+  <div class="row ">
+    <div class="col-sm-3  " >
+  <img src="/resources/images/5004.jpg" class="img-rounded" width="100%" height="360" alt="Cinque Terre">
+
+     </div>   
+     
+    <div class="col-sm-3" >
+    
+               
+
+   <img src="/resources/images/5002.jpg"  width="100%" height="360" alt="Cinque Terre">
+
+
+
+    </div>
+    <div class="col-sm-6">
+          
+     <a href="/detalle?c=10204050"> <img src="/resources/images/tres.jpg" width="100%" height="360" alt="Cinque Terre"></a>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 mt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Footer Content</h5>
+        <p>Here you can use rows and columns here to organize your footer content.</p>
+
+      </div>
+     
+
+</footer>
+<!-- Footer -->
+
+
+
 
 
     </body>
