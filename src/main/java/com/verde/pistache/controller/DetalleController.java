@@ -6,6 +6,7 @@
 package com.verde.pistache.controller;
 
 import com.verde.pistache.model.Producto;
+import com.verde.pistache.model.Productoold;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +24,12 @@ import com.verde.pistache.service.ProductService;
 public class DetalleController {
     	@Autowired
 	private ProductService productService;
-     @RequestMapping(value = {"/detalle"}, method = RequestMethod.GET)
+     @RequestMapping(value = {"/producto"}, method = RequestMethod.GET)
     String  home(ModelMap model , HttpServletRequest request){
       String id = request.getParameter("c");
+         System.out.println("parametro " +  id);
         Producto p = productService.getProducto(id);
-         System.out.println("valor de p " + p);
+     
           model.addAttribute("producto", p );
     return "detalle";
     }

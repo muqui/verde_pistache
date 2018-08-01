@@ -1,213 +1,149 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-      <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-         <li><a href="#">Dama</a></li>
-          <li><a href="#">Caballeros</a></li>
-           <li><a href="#">Niños</a></li>
-       
-      </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-           <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar">
-        </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-           <li><a href="#">Usuario</a></li>
-        <li><a href="#">Carrito</a></li>
-        
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-    
-       
-        <title>Verde Pistache</title>
-    </head>
-    <body>
-     
-
-        <div class="container">
-
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-
-                    <div class="item active">
-                        <img src="/resources/images/uno.jpg" alt="Los Angeles" style="width:100%;">
-                        <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>LA is always so much fun!</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="/resources/images/dos.jpg" alt="Chicago" style="width:100%;">
-                        <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="/resources/images/tres.jpg"   alt="New York" style="width:100%;">
-                        <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                    </div>
-
+<tiles:insertDefinition name="defaultTemplate">
+    <tiles:putAttribute name="body">
+           <!--Sección Slider-->
+        <div class="uk-section uk-section-primary uk-padding-remove" tm-header-transparent="light">
+            <div class="uk-container uk-container-expand uk-padding-remove">
+                <div uk-slideshow="autoplay: true; animation: fade; autoplay-interval: 5000" class="uk-position-relative uk-visible-toggle uk-light">
+                    <ul class="uk-slideshow-items" uk-height-viewport="min-height: 300">
+                        <li>
+                            <div class="uk-position-cover uk-animation-kenburns uk-transform-origin-center-left">
+                                <img src="/resources/images/Slide-1.png" alt="" uk-cover>
+                            </div>
+                            <div class="uk-position-medium uk-position-bottom-right uk-position-small uk-text-right">
+                                <div class="cont-slide-txt">
+                                    <h1 class="slide-title title-1a">Fuera prejuicios,</h1>
+                                    <h1 class="slide-title">¡sé tú misma!</h1>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="uk-position-cover uk-animation-kenburns uk-transform-origin-center-left">
+                                <img src="/resources/images/Slide-2.png" alt="" uk-cover>
+                            </div>
+                            <div class="uk-position-medium uk-position-center uk-position-small uk-text-center">
+                                <div class="cont-slide-txt">
+                                    <h1 class="slide-title">¡Basta de ser</h1>
+                                    <h1 class="slide-title">mainstream!</h1>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="uk-position-cover uk-animation-kenburns uk-transform-origin-center-left">
+                                <img src="/resources/images/Slide-3.png" alt="" uk-cover>
+                            </div>
+                            <div class="uk-position-medium uk-position-bottom-left uk-position-small">
+                                <div class="cont-slide-txt">
+                                    <h1 class="slide-title title-3a">Que jueguen</h1>
+                                    <h1 class="slide-title">a ser ellos</h1>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
                 </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>         
-        </div >
-
-
-
-
-
-
-
-
-<div class="container">
-  
-  <div class="row ">
-    <div class="col-sm-6  " >
-  <img src="/resources/images/5005.jpg" class="img-rounded" width="100%" height="360" alt="Cinque Terre">
-
-     </div>   
-     
-    <div class="col-sm-3" >
-    
-               
-
- <div class="col-sm-12" >
-    <img src="/resources/images/5007.jpg" class="img-rounded" width="100%"  height="180"alt="Cinque Terre">
-
-      
-    </div>
-
-<div class="col-sm-12" >
-     <img src="/resources/images/5006.jpg" class="img-rounded" width="100%" height="180"alt="Cinque Terre">
-
-      
-    </div>
-
-
-    </div>
-    <div class="col-sm-3" >
-      <img src="/resources/images/5008.jpg" class="img-rounded" width="100%" height="360" alt="Cinque Terre">
-    </div>
-  </div>
-
-</div>
-
-
-<div class="container">
-  <div class="row ">
-    <div class="col-sm-3  " >
-  <img src="/resources/images/5004.jpg" class="img-rounded" width="100%" height="360" alt="Cinque Terre">
-
-     </div>   
-     
-    <div class="col-sm-3" >
-    
-               
-
-   <img src="/resources/images/5002.jpg"  width="100%" height="360" alt="Cinque Terre">
-
-
-
-    </div>
-    <div class="col-sm-6">
-          
-     <a href="/detalle?c=10204050"> <img src="/resources/images/tres.jpg" width="100%" height="360" alt="Cinque Terre"></a>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Footer -->
-<footer class="page-footer font-small blue pt-4 mt-4">
-
-  <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-12 mt-md-0 mt-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase">Footer Content</h5>
-        <p>Here you can use rows and columns here to organize your footer content.</p>
-
-      </div>
-     
-
-</footer>
-<!-- Footer -->
-
-
-
-
-
-    </body>
-</html>
-
-
+            </div>
+        </div>
+        <!--Termina Sección Slider-->
+        <div class="uk-section uk-section-primary uk-preserve-color uk-padding-remove sect-products-index">
+            <div class="uk-container uk-container-expand uk-padding-remove">
+                <div uk-grid class="uk-grid-collapse uk-grid-match" data-uk-grid-match="{target:'.uk-panel', row:true}">
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                            <a href="/producto?c=1259607622_2_4_1">
+                                <img src="/resources/images/prod-thumb-01.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                <div class="uk-position-center">
+                                    <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2@m">
+                        <div uk-grid class="uk-grid-collapse uk-grid-match">
+                            <div class="uk-width-1-2@s">
+                                <div uk-grid class="uk-grid-collapse uk-grid-match">
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                                            <a href="/producto?c=8295111400_1_1_1">
+                                                <img src="/resources/images/prod-thumb-02.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                                <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                                <div class="uk-position-center">
+                                                    <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                                            <a href="/producto?c=1292816800_2_2_1">
+                                                <img src="/resources/images/prod-thumb-03.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                                <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                                <div class="uk-position-center">
+                                                    <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                                    <a href="/producto?c=2649443251_1_1_1">
+                                        <img src="/resources/images/prod-thumb-04.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                        <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                        <div class="uk-position-center">
+                                            <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2@m">
+                        <div uk-grid class="uk-grid-collapse uk-grid-match">
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                                    <a href="/producto?c=2859831610_2_1_1">
+                                        <img src="/resources/images/prod-thumb-05.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                        <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                        <div class="uk-position-center">
+                                            <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                                    <a href="/producto?c=1880673401_1_1_1">
+                                        <img src="/resources/images/prod-thumb-06.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                        <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                        <div class="uk-position-center">
+                                            <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-inline-clip product-index-content uk-transition-toggle uk-light" tabindex="0">
+                            <a href="/producto?c=2956461300_2_4_1">
+                                <img src="/resources/images/prod-thumb-07.png" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                <div class="uk-overlay-primary uk-position-cover uk-transition-fade"></div>
+                                <div class="uk-position-center">
+                                    <span class="uk-transition-fade" uk-icon="icon: plus; ratio: 2"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+           
+        </tiles:putAttribute>
+</tiles:insertDefinition>

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'DJ Gross';
+    src: url('/resources/fonts/DJ-Gross.woff2') ,
+        url('/resources/fonts/DJ-Gross.woff') ,
+        url('/resources/fonts/DJ-Gross.ttf') ,
+        
+        url('/resources/fonts/DJ-Gross.svg') ;
+       
+    font-weight: normal;
+    font-style: normal;
+}
+

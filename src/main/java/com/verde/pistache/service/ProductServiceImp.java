@@ -5,11 +5,13 @@
  */
 package com.verde.pistache.service;
 
-import com.verde.pistache.model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.verde.pistache.dao.ProductDao;
+import com.verde.pistache.model.Producto;
+import com.verde.pistache.model.Users;
 import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 /**
  *
@@ -24,5 +26,27 @@ public class ProductServiceImp implements ProductService{
     public Producto getProducto(String codigo) {
     return productDAO.getProducto(codigo);
     }
-    
+      @Override
+    public List<Producto> getProductoList(String c) {
+       return productDAO.getProductoList(c);
+    }
+
+    @Override
+    public void addUsuario(Users user) {
+       productDAO.addUsuario(user);
+    }
+
+    @Override
+    public Users findByUserName(String nombre) {
+          return productDAO.findByUserName(nombre);
+    }
+
+    @Override
+    public boolean getEmail(String email) {
+       return productDAO.getEmail(email);
+    }
+   public void updateUser(Users user){
+       productDAO.updateUser(user);
+   }
+   
 }
