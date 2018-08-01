@@ -1,0 +1,215 @@
+/*
+Base de datos verde pistache - tienda de ropa postgres
+*/
+CREATE TABLE producto
+(
+idproducto serial primary key,
+imagen varchar(50) not null,
+nombre varchar(50) not null,
+codigo varchar(50) not null,
+price decimal(7,2) not null,
+cantidad integer not null,
+descripcion varchar(50) not null,
+stock integer not null,
+talla varchar(50) not null,
+categoria varchar(10) not null
+
+);
+CREATE TABLE fotos
+(
+idfoto serial primary key,
+nombre varchar(50) not null,
+idproducto integer not null,	
+ FOREIGN KEY (idproducto) REFERENCES producto (idproducto)
+
+);
+
+CREATE TABLE users
+(
+iduser serial primary key,
+username varchar(50) not null,
+correo varchar(50) not null,
+telefono varchar(50) not null,
+password  varchar(50) not null,
+cp varchar(50) not null,
+ciudad varchar(50) not null,
+direccion  varchar(50) not null,
+apellidos varchar(50) not null
+);
+
+
+
+Mysql 
+create table producto (idproducto integer  AUTO_INCREMENT primary key, imagen varchar(50) not null ,nombre varchar(50) not null, codigo varchar(50) not null,price decimal(7,2) not null,cantidad integer not null,descripcion varchar(50) not null,stock integer not null);
+
+
+CREATE TABLE fotos ( idfoto integer AUTO_INCREMENT primary key, nombre varchar(50) not null, idproducto integer, FOREIGN KEY (idproducto) REFERENCES producto  (idproducto ));
+
+
+Insertar productos
+insert into producto (idproducto ,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(1,'1292816800_2_2_1','Bomber jacket with slogan','1292/816',750.00,0,'Negro',100, '', 'HOMBRE');
+insert into fotos(nombre, idproducto) values ('1292816800_2_3_1',1);
+insert into fotos(nombre, idproducto) values ('1292816800_2_4_1',1);
+insert into fotos(nombre, idproducto) values ('1292816800_2_3_1',1);
+
+insert into producto (idproducto,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(2,'2956461300_2_4_1',' Camiseta con estampado',' 2956/461',250.00,0,' Amarillo',100, '', 'HOMBRE');
+insert into fotos(nombre, idproducto) values ('2956461300_2_3_1',2);
+insert into fotos(nombre, idproducto) values ('2956461300_2_2_1',2);
+insert into fotos(nombre, idproducto) values ('2956461300_1_1_1',2);
+
+
+insert into producto (idproducto,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(3, '2859831610_2_1_1',' Camiseta longer',' 2859/831',300.00,0,' Morado',100, '', 'HOMBRE');
+insert into fotos(nombre, idproducto) values ('2859831610_1_1_1',3);
+insert into fotos(nombre, idproducto) values ('2859831610_2_2_1',3);
+insert into fotos(nombre, idproducto) values ('2859831610_2_4_1',3);
+
+insert into producto (idproducto,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(4,'2649443251_1_1_1',' Camiseta cropped con algodón orgánico','2649/443',250.00,0,' Blanco roto',100, '', 'mujer');
+insert into fotos(nombre, idproducto) values ('2649443251_2_1_1',4);
+insert into fotos(nombre, idproducto) values ('2649443251_2_2_1',4);
+insert into fotos(nombre, idproducto) values ('2649443251_2_4_1',4);
+
+insert into producto (idproducto,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(5,'1880673401_1_1_1','Sudadera cuello redondo y manga larga','1880/673',450.00,0,'Marino',100, '', 'NINO');
+insert into fotos(nombre, idproducto) values ('1880673401_2_1_1',5);
+insert into fotos(nombre, idproducto) values ('1880673401_2_4_1',5);
+insert into fotos(nombre, idproducto) values ('1880673401_2_10_1',5);
+
+insert into producto (idproducto,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(6,'1259607622_2_4_1','CAMISETA ESTAMPADO','1259/607',170.00,0,'Rosa palo',100, '', 'NINO');
+insert into fotos(nombre, idproducto) values (' 1259607622_2_1_1',6);
+insert into fotos(nombre, idproducto) values (' 1259607622_2_10_1',6);
+insert into fotos(nombre, idproducto) values (' 1259607622_1_1_1',6);
+
+
+insert into producto (idproducto,imagen,nombre,codigo,price,cantidad,descripcion,stock,talla,categoria) values(7,'8295111400_1_1_1','Short denim Mom Fit vintage con banda lateral',' 8295/11',600.00,0,'Azul',100, '', 'mujer');
+insert into fotos(nombre, idproducto) values ('8295111400_2_1_1',7);
+insert into fotos(nombre, idproducto) values ('8295111400_2_3_1',7);
+insert into fotos(nombre, idproducto) values ('8295111400_2_4_1',7);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values(
+'5431702300_2_4_1', 'Bermuda vivos contraste', '5431/702',340, 'Amarillo',100,'','nino',0,8);
+insert into fotos(nombre, idproducto) values ('5431702300_2_10_1',8);
+insert into fotos(nombre, idproducto) values ('5431702300_1_1_1',8);
+insert into fotos(nombre, idproducto) values ('5431702300_2_1_1',8);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('5516604807_2_4_1', 'Camiseta Waikiki', '5516/604',250, 'Gris Antracita',100,'','nino',0,10);
+insert into fotos(nombre, idproducto) values ('5516604807_2_10_1',10);
+insert into fotos(nombre, idproducto) values ('5516604807_1_1_1',10);
+insert into fotos(nombre, idproducto) values ('1259607622_2_1_1',10);
+
+ insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('6050604250_1_1_1','Cuerpo nido de Aveja','6050/604',265,'Blanco',100,'','nino',0,11);
+insert into fotos(nombre, idproducto) values ('6050604250_2_10_1',11);
+insert into fotos(nombre, idproducto) values ('6050604250_2_1_1',11);
+insert into fotos(nombre, idproducto) values ('6050604250_2_4_1',11);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('6201604250_2_10_1', 'Body bordado suizo', '6201/604',380, 'Blanco',100,'','nino',0,12);
+insert into fotos(nombre, idproducto) values ('6201604250_2_3_1',12);
+insert into fotos(nombre, idproducto) values ('6201604250_2_4_1',12);
+insert into fotos(nombre, idproducto) values ('6201604250_1_1_1',12);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('8117602250_2_10_1','Camiseta Topos' , '8117/602',280, 'Blanco',100,'','nino',0,13);
+insert into fotos(nombre, idproducto) values ('8117602250_2_1_1',13);
+insert into fotos(nombre, idproducto) values ('8117602250_2_4_1',13);
+insert into fotos(nombre, idproducto) values ('8117602250_1_1_1',13);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('3471666434_2_10_1', 'Jersey b sico', '3471/666',400, 'Ondigo claro',100,'','nino',0,15);
+insert into fotos(nombre, idproducto) values ('3471666434_2_1_1',15);
+insert into fotos(nombre, idproducto) values ('3471666434_2_4_1',15);
+insert into fotos(nombre, idproducto) values ('3471666434_1_1_1',15);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('5624660691_2_10_1', 'Jersy Dog', '5624/660',550, 'Rojo medio',100,'','nino',0,16);
+insert into fotos(nombre, idproducto) values ('5624660691_2_2_1',16);
+insert into fotos(nombre, idproducto) values ('5624660691_2_1_1',16);
+insert into fotos(nombre, idproducto) values ('5624660691_1_1_1',16);
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('6208683920_2_10_1', 'Sudadera Cool', '6208/683',650, 'Azulado',100,'','nino',0,17);
+insert into fotos(nombre, idproducto) values ('6208683920_2_3_1',17);
+insert into fotos(nombre, idproducto) values ('6208683920_2_4_1',17);
+insert into fotos(nombre, idproducto) values ('6208683920_2_1_1',17);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('0060229800_1_1_1', 'Leggins Batman', '3953/960',700, 'Negro',100,'','mujer',0,18);
+insert into fotos(nombre, idproducto) values ('0060229800_2_3_1',18);
+insert into fotos(nombre, idproducto) values ('0060229800_2_1_1',18);
+insert into fotos(nombre, idproducto) values ('0060229800_2_4_1',18);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('0667168305_1_1_1', 'Falda in', '3906/441',300, 'Mostaza',100,'','mujer',0,19);
+insert into fotos(nombre, idproducto) values ('0667168305_2_4_1',19);
+insert into fotos(nombre, idproducto) values ('0667168305_2_3_1',19);
+insert into fotos(nombre, idproducto) values ('0667168305_2_1_1',19);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('1126551401_1_1_1', 'Chaqueta con capucha y escote redondo', '1126/551',650, 'Azul marino',100,'','mujer',0,20);
+insert into fotos(nombre, idproducto) values ('1126551401_2_2_1',20);
+insert into fotos(nombre, idproducto) values ('1126551401_2_4_1',20);
+insert into fotos(nombre, idproducto) values ('1126551401_2_1_1',20);
+
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('2114115641_1_1_1', 'Ribbed T-shirt with buttons', '2114/115',380, 'Red',100,'','mujer',0,21);
+insert into fotos(nombre, idproducto) values ('2114115641_2_4_1',21);
+insert into fotos(nombre, idproducto) values ('2114115641_2_1_1',21);
+insert into fotos(nombre, idproducto) values ('2114115641_2_2_1',21);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('2615880551_1_1_1', 'All-over print cotton T-shirt', '2615/880',450, 'Khaki',100,'','mujer',0,22);
+insert into fotos(nombre, idproducto) values ('2615880551_2_1_1',22);
+insert into fotos(nombre, idproducto) values ('2615880551_2_3_1',22);
+insert into fotos(nombre, idproducto) values ('2615880551_2_4_1',22);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('2673033400_2_2_1', 'Ecologically grown cotton cropped T-shirt busy', '2669/743',350, 'Off white',100,'','nino',0,24);
+insert into fotos(nombre, idproducto) values ('2673033400_2_1_1',24);
+insert into fotos(nombre, idproducto) values ('2673033400_2_4_1',24);
+insert into fotos(nombre, idproducto) values ('2649443251_2_2_1',24);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('5457111251_2_2_1', ' Long dress with buttons', '5457/111',550, 'Off white',100,'','mujer',0,25);
+insert into fotos(nombre, idproducto) values ('5457111251_2_4_1',25);
+insert into fotos(nombre, idproducto) values ('5457111251_1_1_1',25);
+insert into fotos(nombre, idproducto) values ('5457111251_2_3_1',25);
+
+
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('5597847428_2_3_1', 'Tencel dress with buttons', '5597/847,370', 'Light blue',100,'','mujer',0,26);
+insert into fotos(nombre, idproducto) values ('5597847428_1_1_1',26);
+insert into fotos(nombre, idproducto) values ('5597847428_2_4_1',26);
+insert into fotos(nombre, idproducto) values ('5597847428_2_2_1',26);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('0264251426_1_1_1', 'Stile' , '0856/411',480, 'Azul',100,'','hombre',0,28);
+insert into fotos(nombre, idproducto) values ('0264251426_2_4_1',28);
+insert into fotos(nombre, idproducto) values ('0264251426_2_1_1',28);
+insert into fotos(nombre, idproducto) values ('0264251426_2_2_1',28);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('2881033622_2_2_1', 'Playera Bart', '0756/467',700, 'Coral',100,'','hombre',0,29);
+insert into fotos(nombre, idproducto) values ('2881033622_2_1_1',29);
+insert into fotos(nombre, idproducto) values ('2881033622_2_4_1',29);
+insert into fotos(nombre, idproducto) values ('2881033622_1_1_3',29);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('0270969426_2_2_1', 'Cropped slim fit jeans with rips', '0270/969,600', 'Light blue',100,'','hombre',0,31);
+insert into fotos(nombre, idproducto) values ('0270969426_2_2_1',31);
+insert into fotos(nombre, idproducto) values ('0270969426_2_3_1',31);
+insert into fotos(nombre, idproducto) values ('0270969426_2_4_1',31);
+
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('0340372810_1_1_3', 'Jogging trousers with side stripes', '0340/372',550,'Black',100,'','nino',0,32);
+insert into fotos(nombre, idproducto) values ('0344127800_1_1_1',32);
+insert into fotos(nombre, idproducto) values ('0344127754_2_4_1',32);
+insert into fotos(nombre, idproducto) values ('0344127500_2_3_1',32);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('1296551305_1_1_1', 'Jacket with pouch pocket', '1296/551',650, 'Mustard',100,'','hombre',0,34);
+insert into fotos(nombre, idproducto) values ('1296551305_2_4_1',34);
+insert into fotos(nombre, idproducto) values ('1296551305_2_2_1',34);
+insert into fotos(nombre, idproducto) values ('1296551305_2_1_1',34);
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('2046033800_1_1_1', 'Sudadera Homero', '5976/401',750, 'Black',100,'','hombre',0,35);
+insert into fotos(nombre, idproducto) values ('2046033800_2_4_1',35);
+insert into fotos(nombre, idproducto) values ('2046033800_2_3_1',35);
+insert into fotos(nombre, idproducto) values ('2046033800_2_2_1',35);
+
+
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('2956461800_2_4_1', 'Printed T-shirt Verde', '2956/461',450, 'Black',100,'','hombre',0,36);
+insert into fotos(nombre, idproducto) values ('2956461800_2_1_1',36);
+insert into fotos(nombre, idproducto) values ('2956461800_2_3_1',36);
+insert into fotos(nombre, idproducto) values ('2956461800_1_1_1',36);
+insert into producto (imagen,nombre,codigo,price,descripcion,stock,talla,categoria, cantidad, idproducto) values('0264251426_1_1_1', 'Faded-effect skinny jeans', '0264/251',600, 'Light blue',100,'','hombre',0,37);
+insert into fotos(nombre, idproducto) values ('0270969426_2_1_1',37);
+insert into fotos(nombre, idproducto) values ('0264251426_2_1_1',37);
+insert into fotos(nombre, idproducto) values ('0264251426_2_4_1',37);
+
+
+Cambios base de datos
+update producto set categoria='hombre' where categoria = 'HOMBRE';
+update producto set categoria='nino' where categoria = 'NINO';
+update producto set categoria='mujer' where categoria = 'MUJER';
